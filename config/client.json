@@ -1,0 +1,32 @@
+{
+  "run_type": "client",
+  "local_addr": "0.0.0.0",
+  "local_port": 1080,
+  "remote_addr": "MY-DOMAIN-NAME",
+  "remote_port": 443,
+  "password": [
+    "MY-VERTY-STRONG-PASSWORD"
+  ],
+  "ssl": {
+      "sni": "MY-DOMAIN-NAME"
+  },
+  "mux": {
+      "enabled": true
+  },
+  "router": {
+      "enabled": true,
+      "bypass": [
+          "geoip:cn",
+          "geoip:private",
+          "geosite:cn",
+          "geosite:private"
+      ],
+      "block": [
+          "geosite:category-ads"
+      ],
+      "proxy": [
+          "geosite:geolocation-!cn"
+      ],
+      "default_policy": "proxy"
+  }
+}

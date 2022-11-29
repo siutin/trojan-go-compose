@@ -9,3 +9,11 @@ services:
       - "./cert:/root/cert"
     restart:
       on-failure
+  client:
+    image: "p4gefau1t/trojan-go"
+    ports:
+      - "1080:1080"
+    volumes:
+      - "./config/client.json:/etc/trojan-go/config.json"
+    restart:
+      on-failure
