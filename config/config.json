@@ -1,0 +1,21 @@
+{
+  "run_type": "server",
+  "local_addr": "0.0.0.0",
+  "local_port": 443,
+  "remote_addr": "172.17.0.1",
+  "remote_port": 80,
+  "password": [
+      "MY-VERTY-STRONG-PASSWORD"
+  ],
+  "ssl": {
+      "cert": "/root/cert/server.crt",
+      "key": "/root/cert/server.key",
+      "sni": "MY-DOMAIN-NAME"
+  },
+  "router": {
+      "enabled": true,
+      "block": [
+          "geoip:private"
+      ]
+  }
+}
