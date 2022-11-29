@@ -9,6 +9,8 @@ services:
       - "./cert:/root/cert"
     restart:
       on-failure
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   client:
     image: "p4gefau1t/trojan-go"
     ports:
