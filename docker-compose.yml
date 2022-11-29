@@ -1,11 +1,11 @@
 version: "3.9"
 services:
-  trojan:
+  server:
     image: "p4gefau1t/trojan-go"
     ports:
       - "443:443"
     volumes:
-      - "./config:/etc/trojan-go"
+      - "./config/server.json:/etc/trojan-go/config.json"
       - "./cert:/root/cert"
     restart:
       on-failure
